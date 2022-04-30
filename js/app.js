@@ -14,15 +14,11 @@
 */
 
 /**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
-
-/**
  * Define Global Variables
  * 
 */
-
+const $ = document.querySelector;
+const $$ = document.querySelectorAll;
 
 /**
  * End Global Variables
@@ -39,7 +35,16 @@
 */
 
 // build the nav
+$$("section").forEach(section => {
+    const sel = `#${section.id} div h2`;
 
+    // There are better ways out there.
+    // This works for now.
+    $("#navbar__list").innerHTML +=
+        `<li id="nav_${section.id}">
+            ${$(sel).textContent}
+        </li>`;
+});
 
 // Add class 'active' to section when near top of viewport
 
