@@ -65,6 +65,7 @@ const activateOnlySection = thisSection =>
 const addEventsToNavbar = _ => {
     $$("#navbar__list li").forEach(item =>
         item.addEventListener("click", e => {
+            e.preventDefault();
             const targetId = e.target.dataset.nav;
             _devMsg(targetId);
 
